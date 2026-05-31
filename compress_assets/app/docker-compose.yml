@@ -1,0 +1,12 @@
+services:
+  compress-assets:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: compress-assets:latest
+    container_name: compress-assets
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    restart: unless-stopped

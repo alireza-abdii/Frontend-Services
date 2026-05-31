@@ -1,0 +1,30 @@
+services:
+  compress-assets:
+    image: services/compress-assets:front-tools
+    build:
+      context: ./compress_assets/app
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  image-to-component:
+    image: services/image-to-component:front-tools
+    build:
+      context: ./image_to_component/app
+      dockerfile: Dockerfile
+    ports:
+      - "8100:8100"
+    restart: unless-stopped
+
+  frontend-core-service:
+    image: services/frontend-core-service:front-tools
+    build:
+      context: ./frontend-core-service/app
+      dockerfile: Dockerfile
+    ports:
+      - "8200:8200"
+    restart: unless-stopped
+    depends_on:
+      - compress-assets
+      - image-to-component

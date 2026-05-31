@@ -1,0 +1,8 @@
+services:
+  frontend-core-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8200:8200"
+    restart: unless-stopped

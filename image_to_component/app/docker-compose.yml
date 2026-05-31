@@ -1,0 +1,8 @@
+services:
+  image-to-component:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8100:8100"
+    restart: unless-stopped
