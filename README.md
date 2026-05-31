@@ -265,3 +265,7 @@ Install examples:
   - Windows: install from [ffmpeg.org](https://ffmpeg.org) and ensure it is on `PATH`
 
 Python dependencies are installed automatically by each `start.sh` into a local `.venv`. Frontend dependencies are installed via `npm install` in each `app` folder.
+
+---
+
+Developed by the IT team at **Dade Negar Eghtesad**.
